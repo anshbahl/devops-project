@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps File Management Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cloud Storage Hub</h1>
+        
+        <div id="auth-section" class="card">
+            <h2>Authentication</h2>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email Address">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <div class="btn-group">
+                <button onclick="handleAuth('signup')" class="btn secondary">Sign Up</button>
+                <button onclick="handleAuth('login')" class="btn primary">Log In</button>
+            </div>
+            <p id="auth-message" class="message"></p>
+        </div>
+
+        <div id="upload-section" class="card hidden">
+            <h2>Secure File Upload</h2>
+            <p id="user-welcome"></p>
+            <form id="upload-form">
+                <input type="file" id="file-input" required>
+                <button type="submit" class="btn success">Upload to Cloud</button>
+            </form>
+            <p id="upload-message" class="message"></p>
+            
+            <hr>
+            <h3>Uploaded Files</h3>
+            <ul id="files-list"></ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
