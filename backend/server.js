@@ -9,8 +9,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: "*"
+    origin: "*", // Allows requests from your Vercel domain link
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options("*", cors());
 
 // ✅ ADD HERE
 app.use("/uploads", express.static("uploads"));
