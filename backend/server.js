@@ -14,7 +14,7 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
-app.options("/*", cors());
+
 
 // ✅ ADD HERE
 app.use("/uploads", express.static("uploads"));
