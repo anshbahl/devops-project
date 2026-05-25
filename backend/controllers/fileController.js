@@ -19,3 +19,15 @@ exports.uploadFile = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+
+// 2. ✅ ADD/VERIFY THIS EXACT FUNCTION IS EXPORTED LIKE THIS:
+exports.getFiles = async (req, res) => {
+  try {
+    // Finds all documents belong to the authenticated user ID
+    const files = await File.find({ user: req.user.id });
+    res.json(files);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
