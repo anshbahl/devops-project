@@ -16,7 +16,12 @@ app.use("/uploads", express.static("uploads"));
 // routes
 const authRoutes = require("./routes/authRoutes");
 const fileRoutes = require("./routes/fileRoutes");
+const express = require("express");
+const cors = require("cors"); // 1. Import CORS
+const app = express();
 
+app.use(cors()); // 2. Enable CORS globally for all incoming web requests
+app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/files", fileRoutes);
 app.get("/", (req, res) => {
